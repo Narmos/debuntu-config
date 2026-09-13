@@ -1,0 +1,74 @@
+### Pour Debian et Ubuntu
+#add:packagename
+#del:packagename
+### Pour Debian uniquement
+#add-debian:packagename
+#del-debian:packagename
+### Pour Ubuntu uniquement
+#add-ubuntu:packagename
+#del-ubuntu:packagename
+
+# CLI
+add:7zip
+add:fastfetch
+add:git
+add:lm-sensors
+add:podman
+add:shellcheck
+add:wakeonlan
+
+# GUI
+add:deja-dup
+add:file-roller
+add:filezilla
+add:geary
+add:gparted
+add:ptyxis
+add:simple-scan
+add:virt-viewer
+add:vlc
+del-debian:evolution
+del-debian:firefox-esr
+del-debian:malcontent
+del:shotwell
+del:showtime
+del-ubuntu:sysprof
+del:totem
+
+# GUI - depuis dépôts tiers
+add:code
+add:firefox
+add:firefox-l10n-fr
+
+# GNOME - applications
+add:dconf-editor
+add:gnome-boxes
+add:gnome-calendar
+add:gnome-connections
+add:gnome-contacts
+add:gnome-tweaks
+del:gnome-maps
+del:gnome-music
+del:gnome-snapshot
+del:gnome-sound-recorder
+del:gnome-terminal
+del:gnome-tour
+del:gnome-weather
+
+# GNOME - extensions
+add-debian:gnome-shell-extension-appindicator
+add-debian:gnome-shell-extension-dashtodock
+add-debian:gnome-shell-extension-tiling-assistant
+del-debian:gnome-shell-extension-prefs
+
+# Yaru (thème Ubuntu)
+add-debian:yaru-theme-gnome-shell
+add-debian:yaru-theme-gtk
+
+# Python
+add:python3-pip
+add:python3-tk
+add:python3-venv
+
+# Dépendance pour lancer les AppImages
+add:libfuse2t64

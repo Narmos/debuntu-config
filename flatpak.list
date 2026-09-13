@@ -1,0 +1,19 @@
+### Pour Debian et Ubuntu
+#add:packagename
+#del:packagename
+### Pour Debian uniquement
+#add-debian:packagename
+#del-debian:packagename
+### Pour Ubuntu uniquement
+#add-ubuntu:packagename
+#del-ubuntu:packagename
+
+add:com.github.tchx84.Flatseal
+add:com.mattjakeman.ExtensionManager
+add:io.podman_desktop.PodmanDesktop
+add:it.mijorus.gearlever
+add:org.gimp.GIMP
+add:org.inkscape.Inkscape
+add:org.jdownloader.JDownloader
+add:org.keepassxc.KeePassXC
+add:org.onlyoffice.desktopeditors

@@ -1,0 +1,39 @@
+## System update for all package managers
+sys-update() {
+    sudo echo &> /dev/null
+
+    ## APT
+    if command -v apt &> /dev/null; then
+        echo -e "\n[APT]"
+        echo
+        sudo apt update && sudo apt full-upgrade -y && sudo apt autoremove --purge -y
+    fi
+    
+    ## DNF
+    if command -v dnf &> /dev/null; then
+        echo -e "\n[DNF]"
+        echo
+        yes n | sudo dnf upgrade
+    fi
+
+    ## Snap
+    if command -v snap &> /dev/null; then
+        echo -e "\n[Snap]"
+        echo
+        sudo snap refresh
+    fi
+
+    ## Flatpak
+    if command -v flatpak &> /dev/null; then
+        echo -e "\n[Flatpak]"
+        sudo flatpak update --noninteractive && sudo flatpak uninstall --unused --noninteractive
+    fi
+}
+
+## Shortcut for extracting files using 7-Zip
+## Usage: ext <archive_file>
+ext () { 7z x "$1";}
+
+## Shortcut for installing packages from Debian Backports repository
+## Usage: debian-bpi <package_name>
+debian-bpi () { sudo apt install -t trixie-backports "$1"; }

@@ -1,0 +1,9 @@
+# Priorise packages from the Mozilla repository over the Debian/Ubuntu repositories
+Package: *
+Pin: origin packages.mozilla.org
+Pin-Priority: 1000
+
+# Prevents the system from installing Firefox from the Ubuntu repositories/Snap
+Package: firefox
+Pin: release o=Ubuntu
+Pin-Priority: -1
