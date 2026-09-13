@@ -1,15 +1,14 @@
 # Ma configuration Debian/Ubuntu
 
-Script d'automatisation pour configurer et mettre à jour mes système Debian et Ubuntu (base Ubuntu Desktop Minimal).
+Script d'automatisation pour configurer et mettre à jour mes systèmes Debian et Ubuntu.
 
 > [!NOTE]
-> Ce script est conçu exclusivement pour **Debian** et **Ubuntu Desktop** utilisant l'environnement de bureau **GNOME**.
+> Ce script est conçu exclusivement pour **Debian** et **Ubuntu Desktop** avec l'environnement de bureau **GNOME**.
 
 ---
 
 ## 🧪 Versions testées
 * Debian 13 (trixie)
-* Debian testing (forky)
 * Ubuntu 26.04 LTS
 
 ---
