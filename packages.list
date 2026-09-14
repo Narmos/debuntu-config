@@ -36,7 +36,8 @@ del-ubuntu:sysprof
 del:totem
 
 # GUI - depuis dépôts tiers
-add:code
+del:code
+add:codium
 add:firefox
 add:firefox-l10n-fr
 

@@ -413,19 +413,19 @@ if ! check_apt_repo mozilla.sources \
 	check_cmd
 fi
 
-## VS Code
-if ! check_apt_repo vscode.sources \
-	&& [[ -f "${ASSETS_PATH}/apt/sources.list.d/vscode.sources" ]]; then
+## VSCodium
+if ! check_apt_repo vscodium.sources \
+	&& [[ -f "${ASSETS_PATH}/apt/sources.list.d/vscodium.sources" ]]; then
 	
-	echo " ↳ Configuration du dépôt APT : VS Code "
+	echo " ↳ Configuration du dépôt APT : VSCodium "
 
 	echo -n "  ↳ Import de la clé de signature du dépôt "
-	wget -qO - https://packages.microsoft.com/keys/microsoft.asc \
-	| gpg --dearmor -o /usr/share/keyrings/microsoft.gpg
+	wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg \
+	| gpg --dearmor -o /usr/share/keyrings/vscodium-archive-keyring.gpg
 	check_cmd
 
 	echo -n "  ↳ Ajout du dépôt "
-	cp -uv "${ASSETS_PATH}/apt/sources.list.d/vscode.sources" "/etc/apt/sources.list.d/" &>> "${LOG_FILE}"
+	cp -uv "${ASSETS_PATH}/apt/sources.list.d/vscodium.sources" "/etc/apt/sources.list.d/" &>> "${LOG_FILE}"
 	check_cmd
 
 	echo -n "  ↳ Refresh du cache "
