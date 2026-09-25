@@ -12,6 +12,7 @@ add:com.github.tchx84.Flatseal
 add:com.mattjakeman.ExtensionManager
 add:io.podman_desktop.PodmanDesktop
 add:it.mijorus.gearlever
+add:net.donnybeelo.Convey
 add:org.gimp.GIMP
 add:org.inkscape.Inkscape
 add:org.jdownloader.JDownloader
