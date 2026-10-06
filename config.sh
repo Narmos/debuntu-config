@@ -539,6 +539,11 @@ if [[ "${IS_FLATPAK_ENABLED}" == "true" ]]; then
 	else
 		echo -e " ↳ ${TXT_YELLOW}${TXT_BOLD}ATTENTION⤳${TXT_RESET} Le fichier flatpak.list n'existe pas !"
 	fi
+
+	## Client mail Hylki depuis dépôt privé
+	echo -n " ↳ Installation du Flatpak depuis un dépôt privé : co.hyprlab.Hylki "
+	flatpak install --noninteractive -y --from https://hylki.hyprlab.co/flatpak/co.hyprlab.Hylki.flatpakref &>> "${LOG_FILE}"
+	check_cmd
 fi
 
 ### INSTALLATION/SUPPRESSION SNAP
