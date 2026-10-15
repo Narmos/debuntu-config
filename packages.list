@@ -72,3 +72,5 @@ add:python3-venv
 
 # Dépendance pour lancer les AppImages
 add:libfuse2t64
+# Dépendance pour l'AppImage kDrive
+add:libopengl0
