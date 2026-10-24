@@ -17,4 +17,3 @@ add:org.inkscape.Inkscape
 add:org.jdownloader.JDownloader
 add:org.keepassxc.KeePassXC
 add:org.onlyoffice.desktopeditors
-del:net.donnybeelo.Convey
