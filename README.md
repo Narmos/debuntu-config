@@ -10,19 +10,20 @@ Script d'automatisation pour configurer et mettre à jour mes systèmes Debian e
 ## 🧪 Versions testées
 * Debian 13 (trixie)
 * Ubuntu 26.04 LTS
+* Ubuntu 26.10
 
 ---
 
 ## 🔍 Ce que fait le script
 
 - Configure le gestionnaire de paquets APT et applique les mises à jour
-- Configure le gestionnaire de paquets Flatpak et applique les mises à jour
-- Configure le gestionnaire de paquets Snap et applique les mises à jour
+- Configure le gestionnaire de paquets Flatpak et applique les mises à jour (sauf si désactivé dans le script)
+- Configure le gestionnaire de paquets Snap et applique les mises à jour (si Snap présent sur la distribution)
 - Propose de redémarrer le système si nécessaire
-- Configure les dépôts officiels et additionnels au système
-- Supprime les Snaps forcés par Ubuntu
+- Configure les dépôts officiels et/ou additionnels au système
+- Supprime les Snaps forcés sur Ubuntu
 - Ajoute ou supprime les paquets deb dont ceux spécifiés dans `packages.list`
-- Ajoute ou supprime les paquets flatpak spécifiés dans `flatpak.list`
+- Ajoute ou supprime les paquets flatpak dont ceux spécifiés dans `flatpak.list`
 - Ajoute ou supprime les paquets snap spécifiés dans `snap.list`
 - Personnalise la configuration du système
 - Propose de redémarrer le système si nécessaire
