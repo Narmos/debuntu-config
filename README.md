@@ -3,7 +3,7 @@
 Script d'automatisation pour configurer et mettre à jour mes systèmes Debian et Ubuntu.
 
 > [!NOTE]
-> Ce script est conçu exclusivement pour **Debian** et **Ubuntu Desktop** avec l'environnement de bureau **GNOME**.
+> Ce script est conçu principalement pour **Debian** et **Ubuntu Desktop** avec l'environnement de bureau **GNOME**.
 
 ---
 

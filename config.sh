@@ -225,12 +225,27 @@ if [[ "${EUID}" -ne 0 ]]; then
 	exit 1
 fi
 
-## Si bien Debian GNOME ou Ubuntu Desktop
+## Si bien Debian GNOME ou Ubuntu Desktop (ou si dérivées mais avec avertissement)
 if ! { [[ "${OSR_ID}" == "debian" ]] && pgrep -x "gnome-shell" &>/dev/null; } && \
    ! { check_apt_pkg ubuntu-desktop || check_apt_pkg ubuntu-desktop-minimal; }; then
-	echo -e "${TXT_RED}${TXT_BOLD}ERREUR⤳${TXT_RESET} Seules Debian (GNOME) et Ubuntu Desktop sont supportées !"
-	echo
-	exit 2
+	# Si dérivée de Debian ou Ubuntu
+	if [[ "${OSR_ID:-}" =~ debian|ubuntu || "${OSR_ID_LIKE:-}" =~ debian|ubuntu ]]; then
+		echo -e "${TXT_YELLOW}${TXT_BOLD}ATTENTION⤳${TXT_RESET} Distribution dérivée détectée, des effets inattendus peuvent survenir !"
+		echo -e -n "${TXT_YELLOW}Voulez-vous vraiment continuer ? [o/N] : ${TXT_RESET}"
+
+		read -r response
+		response="${response:-n}"
+
+		if ! [[ "${response,,}" =~ ^[oOyY]$ ]]; then
+			echo
+			exit 1
+		fi
+		echo
+	else
+		echo -e "${TXT_RED}${TXT_BOLD}ERREUR⤳${TXT_RESET} Seules Debian (GNOME), Ubuntu Desktop et éventuellement leurs dérivées sont supportées !"
+		echo
+		exit 2
+	fi
 fi
 
 ## Paramètres du script
