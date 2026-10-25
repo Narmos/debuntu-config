@@ -18,6 +18,7 @@ add:shellcheck
 add:wakeonlan
 
 # GUI
+add-ubuntu:bazaar
 add:deja-dup
 add:file-roller
 add:filezilla

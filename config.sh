@@ -328,18 +328,16 @@ if [[ "${IS_FLATPAK_ENABLED}" == "true" ]]; then
 		check_cmd
 	fi
 
-	if [[ "${OSR_ID}" == "debian" ]]; then
-		if ! check_apt_pkg "gnome-software-plugin-flatpak"; then
-			echo -n " ↳ Installation du paquet requis : gnome-software-plugin-flatpak "
-			add_apt_pkg gnome-software-plugin-flatpak
-			check_cmd
-		fi
-	elif [[ "${OSR_ID}" == "ubuntu" ]]; then
-		if ! check_apt_pkg "bazaar"; then
-			echo -n " ↳ Installation du paquet requis : bazaar "
-			add_apt_pkg bazaar
-			check_cmd
-		fi
+	if check_apt_pkg "gnome-software" && ! check_apt_pkg "gnome-software-plugin-flatpak"; then
+		echo -n " ↳ Installation du paquet requis pour GNOME Logiciels : gnome-software-plugin-flatpak "
+		add_apt_pkg gnome-software-plugin-flatpak
+		check_cmd
+	fi
+
+	if check_apt_pkg "plasma-discover" && ! check_apt_pkg "plasma-discover-backend-flatpak"; then
+		echo -n " ↳ Installation du paquet requis pour Discover : plasma-discover-backend-flatpak "
+		add_apt_pkg plasma-discover-backend-flatpak
+		check_cmd
 	fi
 
 	echo -n " ↳ Mise à jour des paquets "
